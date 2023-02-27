@@ -1,5 +1,5 @@
 const LOCAL_MODE = true;
-const LOCAL_IP_ADDRESS = "localhost";
+const LOCAL_IP_ADDRESS = "127.0.0.1";
 
 class Place {
 	#loaded;
@@ -41,7 +41,7 @@ class Place {
 		this.#connect(wsProt + "//" + host + "/ws");
 		this.#loadingp.innerHTML = "downloading map";
 
-		fetch(window.location.protocol + "//" + host + "/place.png?3")
+		fetch(window.location.protocol + "//" + host + "/place.png")
 			.then(async resp => {
 				if (!resp.ok) {
 					console.error("Error downloading map.");
